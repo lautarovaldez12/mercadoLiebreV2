@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %> 
+</head>
+<body>
+    <!-- HEADER -->
+    <%- include('partials/header') %>
+    <!-- /HEADER -->
+    <div class="detalle">
+        <div class="row">
+            <div class="col-12  col-md-12 col-lg-12 product-title">
+                <h1><%= producto.name %> </h1>
+            </div>
+            <div class="col-12">
+                <section class="detail-product">
+                    <div class="col-lg-7">
+                        <div class="imagen-prodicto">
+                            <figure>
+                                <img src="/images/<%= producto.image %>" alt="">
+                            </figure>
+                        </div> 
+                        
+                        <article class="detail-product_description">
+                            <p><%= producto.description %> </p>
+                        </article>
+                        
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <article class="detail-product_data">
+                            <P><%= producto.name %> </P>
+                            <% if (producto.discount > 0) { %>
+                                <span><%= toThousand(producto.price) %> /<%= producto.discount %>% </span>
+                            <% } %>
+                        
+                            <h2><%= toThousand(descuentos(producto.discount,producto.price)) %> </h2>
+                        </article>
+    
+                        <article class="detail-product_info">
+                            <p>Pagá en 12 cuotas sin interes</p>
+                            <p>Retiro gratis en locales del vendedor</p>
+                        </article>
+    
+                        <article class="detail-product_buttom">
+                            <button><a href="">Comprar Ahora</a></button>
+                        </article>
+                    </div>
+                 </section>
+
+                    
+                    
+
+            </div>
+
+        </div>
+
+    </div>                    
+
+    <!--FOOTER-->
+    <%- include('partials/footer') %>
+    <!--/FOOTER-->
+</body>
+</html>
